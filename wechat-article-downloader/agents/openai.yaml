@@ -1,0 +1,4 @@
+interface:
+  display_name: "WeChat Article Export"
+  short_description: "Export verified WeChat articles to Markdown"
+  default_prompt: "Use $wechat-article-downloader to export the accessible WeChat article as a single Markdown file with source image URLs and PDF-checked code blocks."
