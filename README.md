@@ -2,23 +2,17 @@
 
 # Lbin-skills
 
-一个按目录生长的 skills 仓库。
+把重复工作流封装成可复用 skills。
 
 <p>
   <img src="https://img.shields.io/badge/%E6%8A%80%E8%83%BD-1-2563eb" />
-  <img src="https://img.shields.io/badge/%E7%BB%93%E6%9E%84-%E7%9B%AE%E5%BD%95%E5%8C%96-7c3aed" />
-  <img src="https://img.shields.io/badge/%E6%89%A9%E5%B1%95-%E6%8C%81%E7%BB%AD%E5%A2%9E%E9%95%BF-10b981" />
+  <img src="https://img.shields.io/badge/%E5%A4%8D%E7%94%A8-%E5%B7%A5%E4%BD%9C%E6%B5%81-7c3aed" />
+  <img src="https://img.shields.io/badge/%E8%B0%83%E7%94%A8-%E5%8D%B3%E6%89%A7%E8%A1%8C-10b981" />
 </p>
 
 </div>
 
-> 这里不堆大杂烩，只收能复用、能维护、能继续长出来的 skill。
-
-## 封面
-
-| 当前主线 | 组织方式 | 后续扩展 |
-|---|---|---|
-| 微信公众号文章导出 | 每个 skill 一个独立目录 | 直接在首页索引里补一行 |
+> 别把稳定流程反复手搓。能沉淀的就写成 skill，下次直接调用，少一点玄学，多一点可复现。
 
 ## 目录
 
