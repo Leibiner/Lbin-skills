@@ -23,6 +23,6 @@
 
 ### wechat-article-downloader
 
-导出可访问的微信公众号文章为 Markdown，并保留源码级图片链接与代码块。
+WeChat article downloader skill.
 
 [SKILL.md](./wechat-article-downloader/SKILL.md)
