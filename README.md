@@ -14,7 +14,7 @@ Codex skills collection for my own use.
 
 > A compact index of reusable Codex skills, each kept in its own folder with its own instructions and supporting files.
 
-## 目录
+## Skills
 
 | Skill | 作用 | 状态 | 入口 |
 |---|---|---|---|
@@ -33,11 +33,17 @@ Lbin-skills/
     outputs/
 ```
 
-## Skills
+## Conventions
+
+- 新 skill 独立一个目录
+- 目录内保留 `SKILL.md`
+- 需要辅助文件时再加 `agents/`、`scripts/`、`references/`、`assets/`
+- 临时产物放 `work/`
+- 最终交付放 `outputs/`
 
 ### wechat-article-downloader
 
-> Extract WeChat Official Account articles into verified Markdown, while preserving source image URLs and code blocks.
+导出可访问的微信公众号文章，保留源数据、图片链接和代码块，并用 PDF 做校验。
 
 <details open>
 <summary>Scope</summary>
@@ -68,10 +74,3 @@ Lbin-skills/
 - [wechat-article-downloader/scripts/validate_export.py](./wechat-article-downloader/scripts/validate_export.py)
 
 </details>
-
-## Adding more skills
-
-1. Create a new folder beside `wechat-article-downloader/`
-2. Add a `SKILL.md` in that folder
-3. Add supporting files only when the skill really needs them
-4. Register the new skill in the table above
