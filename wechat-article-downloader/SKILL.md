@@ -1,6 +1,6 @@
 ---
 name: wechat-article-downloader
-description: "Export one or all accessible, user-authorized WeChat Official Account publications to verified Markdown files with source image URLs, preserved code blocks, PDF references, and validation. Batch exports use valid publication records as the output unit. Do not use for login bypass, anti-bot bypass, or watermark removal."
+description: "Export one or all accessible, user-authorized WeChat Official Account publications to verified Markdown files with source image URLs, preserved code blocks, PDF references, and validation. Prefer Chrome first, then fall back to another available external browser if Chrome is unavailable or blocked. Batch exports use valid publication records as the output unit. Do not use for login bypass, anti-bot bypass, or watermark removal."
 ---
 
 # Wechat Article Downloader
@@ -22,14 +22,14 @@ Generate a PDF from the source article as the completeness and visual reference.
 ## Boundaries
 
 - Work only with pages the user can access. Reuse an already logged-in Chrome session through the chrome:control-chrome capability when available.
-- When the user provides a WeChat article or publication download link, open it in Chrome first, or in the computer's default external browser if Chrome is unavailable. Do not use the in-app/internal browser for WeChat article access or extraction.
+- When the user provides a WeChat article or publication download link, open it in Chrome first. If Chrome is unavailable, blocked, or cannot complete the page, switch to another available external browser and continue there. Do not use the in-app/internal browser for WeChat article access or extraction.
 - If the page is not accessible or the session is not logged in, stop and ask the user to open or authenticate the article. Do not bypass login, CAPTCHA, anti-bot controls, paywalls, or access restrictions.
 - Do not remove or obscure third-party watermarks. If the user owns the image or has authorization, use the supplied unwatermarked originals instead.
 - Keep raw HTML/JSON and temporary renders under work/; keep only user-facing deliverables under outputs/.
 
 ## Workflow
 
-1. Resolve the article detail URL in Chrome or the system default external browser. An appmsgpublish list page is not the article body; open the individual article before extracting content. Do not use the in-app/internal browser for this workflow.
+1. Resolve the article detail URL in Chrome first, then in another available external browser if needed. An appmsgpublish list page is not the article body; open the individual article before extracting content. Do not use the in-app/internal browser for this workflow.
 2. For a list or batch request, enumerate publication records and their visible article detail anchors from the current page. Use links whose href starts with https://mp.weixin.qq.com/s/. Keep the parent record and child detail URLs together: one list row may contain multiple child article links. The output count is the number of valid publication records; child detail URL counts are internal fetch/QA data and must not appear in the final report unless the user explicitly asks for debugging details.
 3. Handle pagination as an asynchronous UI operation. Click the visible “下一页” control, wait for the list to refresh, and verify the page signature or article set changed. The URL may remain unchanged. Stop when “下一页” is absent or disabled, or when a page signature repeats. Record page number, title, URL, and source row for a resumable manifest. Deduplicate by detail URL.
 4. Determine record validity before export. A record is valid when at least one child detail page is accessible and contains a real article body. Mark deleted, unavailable, empty, or access-blocked records as skipped; do not create a fake Markdown body for them. Process each unique child detail URL sequentially or with a small bounded concurrency. Open the individual article, capture its rendered article or page payload, and prefer the article container (#js_content) or a saved payload.html field over a list response. Record title, author, date, parent record identity, source URL, and raw HTML/JSON.
