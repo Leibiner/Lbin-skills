@@ -2,17 +2,16 @@
 
 # Lbin-skills
 
-Codex skills collection for my own use.
+我的 skills 仓库。
 
 [![Skills](https://img.shields.io/badge/Skills-1-blue)](#skills)
-[![Codex](https://img.shields.io/badge/Codex-Skills-black)](https://github.com/KKKKhazix/khazix-skills)
 [![Layout](https://img.shields.io/badge/Layout-Indexed%20Skills-7c3aed)](#目录)
 
 </div>
 
 <br>
 
-> A compact index of reusable Codex skills, each kept in its own folder with its own instructions and supporting files.
+> 一个可持续扩展的技能索引仓库，每个 skill 都放在独立目录里。
 
 ## Skills
 
