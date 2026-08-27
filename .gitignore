@@ -1,2 +1,4 @@
 __pycache__/
 *.pyc
+wechat-article-downloader/work/
+wechat-article-downloader/outputs/
