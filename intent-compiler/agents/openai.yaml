@@ -1,0 +1,4 @@
+interface:
+  display_name: "Intent Compiler"
+  short_description: "Turn natural language into executable tasks"
+  default_prompt: "Use $intent-compiler to understand my request, inspect available context, ask only critical clarification questions, and execute the resulting task directly when it is sufficiently clear."
