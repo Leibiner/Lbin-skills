@@ -1,0 +1,7 @@
+[
+  {"prompt": "把这个项目的测试体系完善一下", "expected_mode": "execute", "expected_type": "general"},
+  {"prompt": "帮我查一下 GitHub 上有没有类似方案", "expected_mode": "research", "expected_type": "research"},
+  {"prompt": "为什么这个测试会失败", "expected_mode": "discuss", "expected_type": "analysis"},
+  {"prompt": "帮我写一篇介绍文章", "expected_mode": "write", "expected_type": "writing"},
+  {"prompt": "/help", "expected_mode": "execute", "expected_type": "general"}
+]
