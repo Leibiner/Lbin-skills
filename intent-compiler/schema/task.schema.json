@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Lbin Intent Compiler Task",
+  "type": "object",
+  "required": ["version", "mode", "task_type", "objective", "confidence"],
+  "properties": {
+    "version": {"type": "string"},
+    "mode": {
+      "type": "string",
+      "enum": ["execute", "clarify", "discuss", "research", "write"]
+    },
+    "task_type": {
+      "type": "string",
+      "enum": ["coding", "debugging", "testing", "refactoring", "research", "writing", "analysis", "architecture", "automation", "ui_ux", "general"]
+    },
+    "objective": {"type": "string"},
+    "context": {"type": "array", "items": {"type": "string"}},
+    "scope": {"type": "array", "items": {"type": "string"}},
+    "non_goals": {"type": "array", "items": {"type": "string"}},
+    "constraints": {"type": "array", "items": {"type": "string"}},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "acceptance_criteria": {"type": "array", "items": {"type": "string"}},
+    "validation": {"type": "array", "items": {"type": "string"}},
+    "clarifications": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+  },
+  "additionalProperties": false
+}
