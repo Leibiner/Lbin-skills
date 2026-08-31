@@ -18,40 +18,57 @@
 
 > 别把稳定流程反复手搓。能沉淀的就写成 Skill，下次直接调用，少一点玄学，多一点可复现。
 
-## 安装
+## 安装方式
 
-### 一键安装全部 Skills
+### 安装单个 Skill
 
-将仓库中的 Skill 自动复制到 Claude Code 的个人 Skills 目录：
+在 **Claude Code、Codex** 等支持 Agent Skills 的工具里，直接告诉 AI：
 
-```bash
-git clone https://github.com/Leibiner/Lbin-skills.git /tmp/Lbin-skills && mkdir -p ~/.claude/skills && for d in /tmp/Lbin-skills/*/; do [ -f "$d/SKILL.md" ] && cp -R "$d" ~/.claude/skills/; done && rm -rf /tmp/Lbin-skills
+```text
+帮我安装这个 skill：
+https://github.com/Leibiner/Lbin-skills/tree/main/<skill-name>
 ```
 
-安装后可直接检查：
+例如：
 
-```bash
-ls ~/.claude/skills
+```text
+帮我安装这个 skill：
+https://github.com/Leibiner/Lbin-skills/tree/main/intent-compiler
 ```
 
-> 当前仓库的 Skill 均按 Claude Code 个人 Skills 目录组织。部分 Skill 可能还需要额外配置，例如 Hook；请以对应 Skill 目录中的安装说明为准。
+### 安装全部 Skills
+
+直接把整个仓库交给 Agent：
+
+```text
+帮我安装这个 Skills 仓库里的全部 skills：
+https://github.com/Leibiner/Lbin-skills
+```
+
+> 不同工具的实际安装方式可能不同。Skill 如果包含 Hook、Router 或其他额外组件，请以对应 Skill 目录中的安装说明为准。
 
 ## Skills
 
 当前收录的 Skills：
 
-| Skill | 类型 | 简介 | 状态 |
-|---|---|---|---|
-| [`wechat-article-downloader`](./wechat-article-downloader/) | Content | 导出可访问的微信公众号文章，保留图片、代码块和校验材料。 | 🟢 Active |
-| [`intent-compiler`](./intent-compiler/) | Agent | 将自然语言需求转换成明确、可执行、可验证的任务。 | 🟢 Active |
+| Skill | 类型 | 简介 | 状态 | 安装 |
+|---|---|---|---|---|
+| 📰 [`wechat-article-downloader`](./wechat-article-downloader/) | Content | 微信公众号文章下载、整理与校验。 | 🟢 Active | [安装](./wechat-article-downloader/) |
+| 🧠 [`intent-compiler`](./intent-compiler/) | Agent | 将自然语言需求转换成明确、可执行、可验证的任务。 | 🟢 Active | [安装](./intent-compiler/) |
 
 ---
 
-### 📰 wechat-article-downloader
+## 📰 wechat-article-downloader
 
 **微信公众号文章下载 / 整理 / 校验**
 
 > 将可访问的微信公众号文章整理为结构化内容，尽可能保留原始图片链接、代码块、表格和文档结构，并使用 PDF 进行校验。
+
+| 项目 | 说明 |
+|---|---|
+| **类型** | Content |
+| **状态** | 🟢 Active |
+| **适用** | 单篇导出、批量整理、图片 URL 保留、代码块/表格保留、PDF 校验 |
 
 <details>
 <summary><strong>适用场景</strong></summary>
@@ -87,11 +104,17 @@ ls ~/.claude/skills
 
 ---
 
-### 🧠 intent-compiler
+## 🧠 intent-compiler
 
 **自然语言需求编译 / 任务澄清 / 执行准备**
 
 > 将用户自然语言需求转换成 Claude Code 可执行、可验证的任务。优先利用当前项目和会话上下文，只澄清真正阻塞执行的关键问题，信息足够后直接执行并验证。
+
+| 项目 | 说明 |
+|---|---|
+| **类型** | Agent |
+| **状态** | 🟢 Active |
+| **适用** | 需求澄清、Coding、Debugging、Testing、Research、Writing、Automation、UI/UX |
 
 <details>
 <summary><strong>适用场景</strong></summary>
