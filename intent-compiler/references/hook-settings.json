@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/skills/intent-compiler/scripts/user-prompt-submit.sh",
+            "timeout": 3000
+          }
+        ]
+      }
+    ]
+  }
+}
